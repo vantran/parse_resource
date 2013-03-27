@@ -15,6 +15,7 @@ group :development do
   gem "activemodel"
   gem "vcr"
   gem "webmock"
+  gem "kaminari"
 end
 
 gem "rest-client"
