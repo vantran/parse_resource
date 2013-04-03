@@ -27,7 +27,7 @@ class Query
   def order(attr)
     orders = attr.split(" ")
     if orders.count > 1
-      criteria[:order] = orders[1] == "desc" ? "-#{orders[0]}" : "#{orders[0]}"
+      criteria[:order] = orders[1].downcase == "desc" ? "-#{orders[0]}" : "#{orders[0]}"
     end
     self
   end
