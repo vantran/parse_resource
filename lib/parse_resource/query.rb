@@ -78,11 +78,11 @@ class Query
   def execute
     params = {}
     params.merge!({:where => criteria[:conditions].to_json}) if criteria[:conditions]
+    params.merge!({:order => criteria[:order]}) if criteria[:order]
     params.merge!({:limit => criteria[:limit].to_json}) if criteria[:limit]
     params.merge!({:skip => criteria[:skip].to_json}) if criteria[:skip]
     params.merge!({:count => criteria[:count].to_json}) if criteria[:count]
     params.merge!({:include => criteria[:include]}) if criteria[:include]
-    params.merge!({:order => criteria[:order]}) if criteria[:order]
 
     resp = @klass.resource.get(:params => params)
     
